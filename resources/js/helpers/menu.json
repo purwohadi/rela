@@ -1,0 +1,66 @@
+[
+  {
+    "key": "home",
+    "group": "",
+    "label": "Beranda",
+    "icon": "fal fa-home",
+    "tags": "dashboard home",
+    "route": "home",
+    "child": []
+  },
+  {
+    "key": "settings",
+    "group": "Pengaturan",
+    "label": "Pengaturan",
+    "icon": "fal fa-cog",
+    "tags": "pengaturan",
+    "route": "",
+    "child": [
+      {
+        "key": "settings.roles",
+        "group": "Pengaturan",
+        "label": "Pengaturan Peran",
+        "icon": "fal fa-user-secret",
+        "tags": "pengaturan peran",
+        "route": "settings.roles",
+        "child": []
+      },
+      {
+        "key": "settings.permissions",
+        "group": "Pengaturan",
+        "label": "Pengaturan Hak Akses",
+        "icon": "fal fa-lock-alt",
+        "tags": "pengaturan hak akses",
+        "route": "settings.permissions",
+        "child": []
+      },
+      {
+        "key": "settings.reference",
+        "group": "Pengaturan",
+        "label": "Pengaturan Referensi",
+        "icon": "fal fa-book",
+        "tags": "pengaturan referensi",
+        "route": "settings.reference",
+        "child": []
+      },
+      {
+        "key": "settings.menu",
+        "group": "Pengaturan",
+        "label": "Pengaturan Menu",
+        "icon": "fal fa-list-alt",
+        "tags": "pengaturan menu",
+        "route": "settings.menu",
+        "child": []
+      },
+      {
+        "key": "settings.user",
+        "group": "Pengaturan",
+        "label": "Pengaturan Pengguna",
+        "icon": "fal fa-users",
+        "tags": "pengaturan pengguna",
+        "route": "settings.user",
+        "child": []
+      }
+    ]
+  }
+]

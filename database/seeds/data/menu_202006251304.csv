@@ -1,0 +1,9 @@
+"id";"group";"label";"icon";"tags";"route";"parent";"order_no";"permission_id";"visible"
+1123bfb0-b54a-11ea-b54c-f9c3a8b7590d;Pengaturan;Pengaturan Referensi;;pengaturan referensi;settings.reference;75cdedd0-b503-11ea-ba15-ef221d10c9db;23;535bd310-b502-11ea-8fc7-0b01eb01308f;1
+4c24d100-b506-11ea-9a1e-3b1663725c3c;Pengaturan;Pengaturan Menu;;pengaturan menu;settings.menu;75cdedd0-b503-11ea-ba15-ef221d10c9db;22;5929c950-b502-11ea-8114-7b2df4745168;1
+5f47a870-b503-11ea-9631-099db6d4af16;;Beranda;fal fa-home;beranda home;home;;1;333bc440-b502-11ea-94ac-fdb5f1fee3a5;1
+75cdedd0-b503-11ea-ba15-ef221d10c9db;Pengaturan;Pengaturan;fal fa-cog;pengaturan;;;2;3c852ce0-b502-11ea-acad-850cca85da5e;1
+927a5160-b503-11ea-b86c-6f973e5ed5b5;Pengaturan;Pengaturan Peran;;pengaturan peran role;settings.roles;75cdedd0-b503-11ea-ba15-ef221d10c9db;21;44e39390-b502-11ea-8884-e15c56633e44;1
+b2375a50-b551-11ea-b968-bb9239f5d31f;Pengaturan;Pengaturan Pengguna;;pengaturan pengguna user;settings.user;75cdedd0-b503-11ea-ba15-ef221d10c9db;24;624b5b10-b502-11ea-beed-35082cf0775d;1
+e5e64390-b548-11ea-9ed9-37322c71e469;Pengaturan;Pengaturan Hak Akses;;pengaturan hak akses permission;settings.permissions;75cdedd0-b503-11ea-ba15-ef221d10c9db;20;4cf62be0-b502-11ea-8359-773917eada09;1
+af7ef9a0-ce73-11eb-8d2c-4d72016ac893;;Profil User;;profil user;profil.profil;5f47a870-b503-11ea-9631-099db6d4af16;10;333bc440-b502-11ea-94ac-fdb5f1fee3a5;1

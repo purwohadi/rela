@@ -1,0 +1,6 @@
+# VUE JS
+1. npm install vue-form-wizard
+
+
+# Laravel
+1. composer require phpoffice/phpspreadsheet

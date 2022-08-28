@@ -1,0 +1,137 @@
+[
+  {
+    "extension": "bmp",
+    "kind_of_document": "Windows OS/2 Bitmap Graphics",
+    "mime_type": "image/bmp"
+  },
+  {
+    "extension": "csv",
+    "kind_of_document": "Comma-separated values (CSV)",
+    "mime_type": "text/csv"
+  },
+  {
+    "extension": "doc",
+    "kind_of_document": "Microsoft Word",
+    "mime_type": "application/msword"
+  },
+  {
+    "extension": "docx",
+    "kind_of_document": "Microsoft Word (OpenXML)",
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  },
+  {
+    "extension": "gz",
+    "kind_of_document": "GZip Compressed Archive",
+    "mime_type": "application/gzip"
+  },
+  {
+    "extension": "gif",
+    "kind_of_document": "Graphics Interchange Format (GIF)",
+    "mime_type": "image/gif"
+  },
+  {
+    "extension": "htm",
+    "kind_of_document": "HyperText Markup Language (HTML)",
+    "mime_type": "text/html"
+  },
+  {
+    "extension": "html",
+    "kind_of_document": "HyperText Markup Language (HTML)",
+    "mime_type": "text/html"
+  },
+  {
+    "extension": "jpeg",
+    "kind_of_document": "JPEG images",
+    "mime_type": "image/jpeg"
+  },
+  {
+    "extension": "jpg",
+    "kind_of_document": "JPEG images",
+    "mime_type": "image/jpeg"
+  },
+  {
+    "extension": "json",
+    "kind_of_document": "JSON format",
+    "mime_type": "application/json"
+  },
+  {
+    "extension": "otf",
+    "kind_of_document": "OpenType font",
+    "mime_type": "font/otf"
+  },
+  {
+    "extension": "png",
+    "kind_of_document": "Portable Network Graphics",
+    "mime_type": "image/png"
+  },
+  {
+    "extension": "pdf",
+    "kind_of_document": "Adobe Portable Document Format (PDF)",
+    "mime_type": "application/pdf"
+  },
+  {
+    "extension": "ppt",
+    "kind_of_document": "Microsoft PowerPoint",
+    "mime_type": "application/vnd.ms-powerpoint"
+  },
+  {
+    "extension": "pptx",
+    "kind_of_document": "Microsoft PowerPoint (OpenXML)",
+    "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+  },
+  {
+    "extension": "rar",
+    "kind_of_document": "RAR archive",
+    "mime_type": "application/vnd.rar"
+  },
+  {
+    "extension": "rtf",
+    "kind_of_document": "Rich Text Format (RTF)",
+    "mime_type": "application/rtf"
+  },
+  {
+    "extension": "svg",
+    "kind_of_document": "Scalable Vector Graphics (SVG)",
+    "mime_type": "image/svg+xml"
+  },
+  {
+    "extension": "tif",
+    "kind_of_document": "Tagged Image File Format (TIFF)",
+    "mime_type": "image/tiff"
+  },
+  {
+    "extension": "tiff",
+    "kind_of_document": "Tagged Image File Format (TIFF)",
+    "mime_type": "image/tiff"
+  },
+  {
+    "extension": "txt",
+    "kind_of_document": "Text, (generally ASCII or ISO 8859-n)",
+    "mime_type": "text/plain"
+  },
+  {
+    "extension": "vsd",
+    "kind_of_document": "Microsoft Visio",
+    "mime_type": "application/vnd.visio"
+  },
+  {
+    "extension": "xls",
+    "kind_of_document": "Microsoft Excel",
+    "mime_type": "application/vnd.ms-excel"
+  },
+  {
+    "extension": "xlsx",
+    "kind_of_document": "Microsoft Excel (OpenXML)",
+    "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  },
+  {
+    "extension": "xml",
+    "kind_of_document": "XML",
+    "mime_type": "application/xml is recommended as of RFC 7303 (section 4.1), but text/xml is still used sometimes. You can assign a specific MIME type to a file with .xml extension depending on how its contents are meant to be interpreted. For instance, an Atom feed is application/atom+xml, but application/xml serves as a valid default."
+  },
+  {
+    "extension": "zip",
+    "kind_of_document": "ZIP archive",
+    "mime_type": "application/zip"
+  }
+]

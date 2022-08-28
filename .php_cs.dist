@@ -1,0 +1,17 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+  ->in([
+    __DIR__.'/app',
+    __DIR__.'/config',
+    __DIR__.'/database',
+    __DIR__.'/routes',
+    __DIR__.'/tests',
+  ]);
+
+return Diskominfotik\styles($finder);
+
+// Now get yourself into the brace position while we automatically fix
+// our coding style across all these directories! Jump into the terminal
+// and run the following command to watch the magic happen…
+// ./vendor/bin/php-cs-fixer fix

@@ -1,0 +1,15 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/auth.js": "/js/auth.js",
+    "/js/manifest.js": "/js/manifest.js",
+    "/js/vendor~bs.js": "/js/vendor~bs.js",
+    "/js/vendor~fc.js": "/js/vendor~fc.js",
+    "/js/vendor~sync.js": "/js/vendor~sync.js",
+    "/js/vendor~vue.js": "/js/vendor~vue.js",
+    "/js/parts/auth.js": "/js/parts/auth.js",
+    "/js/theme.js": "/js/theme.js",
+    "/js/theme.vendor.js": "/js/theme.vendor.js",
+    "/css/theme.css": "/css/theme.css",
+    "/css/theme~auth.css": "/css/theme~auth.css"
+}
