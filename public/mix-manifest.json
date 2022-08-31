@@ -1,15 +1,15 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/auth.js": "/js/auth.js",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/vendor~bs.js": "/js/vendor~bs.js",
-    "/js/vendor~fc.js": "/js/vendor~fc.js",
-    "/js/vendor~sync.js": "/js/vendor~sync.js",
-    "/js/vendor~vue.js": "/js/vendor~vue.js",
-    "/js/parts/auth.js": "/js/parts/auth.js",
-    "/js/theme.js": "/js/theme.js",
-    "/js/theme.vendor.js": "/js/theme.vendor.js",
-    "/css/theme.css": "/css/theme.css",
-    "/css/theme~auth.css": "/css/theme~auth.css"
+    "/js/manifest.js": "/js/manifest.js?id=7db827d654313dce4250",
+    "/js/vendor~vue.js": "/js/vendor~vue.js?id=8632a401e1899493c128",
+    "/js/vendor~bs.js": "/js/vendor~bs.js?id=f9ba5aa8a5134efcf9f3",
+    "/js/vendor~fc.js": "/js/vendor~fc.js?id=fca8aa14a3fb5e7c25fb",
+    "/js/app.js": "/js/app.js?id=33cd90aa47b201f119e1",
+    "/css/app.css": "/css/app.css?id=de4dd40f5983c2c87e92",
+    "/js/auth.js": "/js/auth.js?id=966ee2adf4f5d24bd383",
+    "/js/vendor~sync.js": "/js/vendor~sync.js?id=79c375ad6982eab7d680",
+    "/js/parts/auth.js": "/js/parts/auth.js?id=f9dd12447c1dc8d308d6",
+    "/js/theme.js": "/js/theme.js?id=5b19994d6f28d89ffe92",
+    "/js/theme.vendor.js": "/js/theme.vendor.js?id=73014c4aab20ce9f1edc",
+    "/css/theme.css": "/css/theme.css?id=3903da0b06b5069075b1",
+    "/css/theme~auth.css": "/css/theme~auth.css?id=64fefe0fe9cbf2ed9a56"
 }

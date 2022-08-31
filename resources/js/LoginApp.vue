@@ -4,14 +4,9 @@
 			<div class="page-inner">
 				<div class="page-content-wrapper bg-transparent m-0">
 					<div
-						class="flex-1"
-						:style="`
-              background: url(${page.background}) no-repeat center bottom
-                fixed;
-              background-size: cover;
-            `"
-					>
-						<div class="logo text-center mt-4">
+						class="flex-1" 
+						:style="`background: url(${page.background}) no-repeat center bottom fixed; background-size: cover;`">
+						<!-- <div class="logo text-center mt-4">
 							<a href="#" class="page-logo-link press-scale-down">
 								<img
 									:src="page.logo"
@@ -32,10 +27,9 @@
 
 							</a>
 							<div class="text-dark mb-2 mt-2 font-weight-bold lead">
-								<!-- {{ settings.appname }} -->
 								SISTEM PEMERINTAHAN BERBASIS ELEKTRONIK <br /> PEMERINTAH PROVINSI DKI JAKARTA
 							</div>
-						</div>
+						</div> -->
 						<div class="container login-container py-2">
 							<div class="card m-3 p-0 loginpage">
 								<div class="row no-gutters justify-content-center mt-4">
@@ -43,17 +37,16 @@
 										<form-login ref="formLogin" :settings="settings" @loadPengumuman="loadPengumuman"></form-login>
 									</div>
 									<!-- <div class="col col-md-6 col-lg-8 hidden-sm-down announc loginpage--announcement" v-if="!isMobile">
-                    <pengumuman ref="pengumuman" :settings="settings"></pengumuman>
-                  </div> -->
+										<pengumuman ref="pengumuman" :settings="settings"></pengumuman>
+									</div> -->
 								</div>
 							</div>
 						</div>
 					</div>
 					<footer>
-						<div
+						<!-- <div
 							class="container mx-auto sponsor pt-2"
-							style="display: block; margin-bottom: 0rem !important"
-						>
+							style="display: block; margin-bottom: 0rem !important">
 							<div class="px-4 text-center">
 								<img
 									:src="page.footer_logo"
@@ -61,22 +54,19 @@
 									width="105px"
 								/>
 							</div>
-						</div>
-						<div
-							class="pos-bottom pos-left pos-right p-3 mt-0 mx-auto text-center"
-						>
+						</div> -->
+						<div class="pos-bottom pos-left pos-right p-3 mt-0 mx-auto text-center">
 							2021 © {{ settings.appname }} by&nbsp;
 							<a
 								:href="settings.owner.web"
 								class="text-dark opacity-75 fw-500"
 								:title="settings.owner.name"
-								target="_blank"
-							>
+								target="_blank">
 								{{ settings.owner.name }}
 							</a>
-							<div class="hash-version">
+							<!-- <div class="hash-version">
 								{{ settings.hash_version }}
-							</div>
+							</div> -->
 						</div>
 					</footer>
 				</div>

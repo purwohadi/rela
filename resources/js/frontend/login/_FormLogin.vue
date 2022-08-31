@@ -1,213 +1,186 @@
 <template>
-  <section>
-    <section id="formlogin" v-if="!showResetPassword">
-      <validation-observer v-slot="{ passes }" :slim="true">
-        <b-form @submit.prevent="passes(submit)" id="form-login">
-          <b-form-group
-            description="Gunakan NRK atau Username Anda yang sudah terdaftar"
-            label="Username"
-            label-for="username"
-          >
-            <validation-provider
-              rules="required"
-              v-slot="{ errors }"
-              name="Username"
-            >
-              <b-input-group
-                prepend="@"
-                name="username"
-                class="mb-2 mr-sm-2 mb-sm-0"
-              >
-                <template slot="prepend">
-                  <span class="input-group-text">
-                    <i class="fal fa-user-alt fs-xl"></i>
-                  </span>
-                </template>
-                <b-form-input
-                  v-model="model.username"
-                  trim
-                  id="username"
-                  v-focus
-                  :disabled="loading"
-                  placeholder="Username"
-                  tabindex="1"
-                ></b-form-input>
-              </b-input-group>
-              <invalid-feedback :error="errors[0] || messages.username" class="mt-1"></invalid-feedback>
-            </validation-provider>
-          </b-form-group>
-          <b-form-group
-            description="Untuk keamanan silahkan ganti kata sandi Anda secara
-                          berkala"
-            label="Password"
-            label-for="password"
-          >
-            <ValidationProvider
-              rules="required"
-              v-slot="{ errors }"
-              name="Password"
-            >
-              <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
-                <template slot="prepend">
-                  <span class="input-group-text">
-                    <i class="fal fa-lock-alt fs-xl"></i>
-                  </span>
-                </template>
-                <b-form-input
-                  v-model="model.password"
-                  id="password"
-                  type="password"
-                  :disabled="loading"
-                  name="password"
-                  placeholder="Password"
-                  tabindex="2"
-                ></b-form-input>
-              </b-input-group>
-              <invalid-feedback :error="errors[0] || (messages.username.length == 0 ? messages.password : '')" class="mt-1"></invalid-feedback>
-            </ValidationProvider>
-          </b-form-group>
-          <div class="form-group mt-0 mb-2">
-            <div class="captcha row no-gutters">
-              <div class="col-lg-5 pr-lg-1 my-2">
-                <div
-                  style="
-                    display: inline-block;
-                    border-radius: 0.3rem;
-                    overflow: hidden;
-                    width: 130px;
-                    height: 45px;
-                  "
-                >
-                  <b-img
-                    id="captcha-img"
-                    :blank="!hasCaptcha"
-                    blank-color="#f2f2f2"
-                    width="130px"
-                    alt="Loading..."
-                    :src="captcha_img"
-                    ref="captcha-img"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-7 pr-lg-1 my-2">
-                <div class="row no-gutters">
-                  <div class="col-lg-6">
-                    <div class="reload-btn pl-2">
-                      <button
-                        type="button"
-                        class="btn btn-danger btn-sm reload"
-                        id="reload-captcha"
-                        :disabled="loading"
-                        @click="getCaptcha()"
-                        tabindex="5"
-                      >
-                        Reload Captcha
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="reload-btn pl-2">
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-sm reload"
-                        id="audio-captcha"
-                        :disabled="loading"
-                        @click.prevent="readAudio"
-                        aria-describedby="Captcha Suara"
-                        tabindex="6"
-                      >
-                        Captcha Suara
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6" v-if="false">
-                    <div class="klik-btn pl-1">
-                      <button
-                        type="button"
-                        class="btn btn-outline-light btn-sm read"
-                        id="read-captcha"
-                        @click="readCaptcha()"
-                      >
-                        {{
-                          captcha_read
-                            ? `Captchanya adalah ${captcha_read}`
-                            : "Klik Captcha"
-                        }}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="captcha-input mt-1">
-              <ValidationProvider
-                :rules="captchaRules"
-                v-slot="{ errors }"
-                name="Captcha"
-              >
-                <input
-                  id="captcha"
-                  name="captcha"
-                  type="text"
-                  class="form-control"
-                  autocomplete="off"
-                  v-mask="'#####'"
-                  v-model="model.captcha"
-                  placeholder="Captcha"
-                  aria-label="Captcha"
-                  :disabled="loading"
-                  tabindex="3"
-                />
-                <invalid-feedback
-                  :error="errors[0] || messages.captcha"
-                  class="mt-1"
-                ></invalid-feedback>
-              </ValidationProvider>
-            </div>
-          </div>
-          <div class="action-button mt-3">
-            <div class="row no-gutters">
-              <div class="col-lg-12 pr-lg-1 my-1">
-                <button
-                  id="js-login-btn"
-                  type="submit"
-                  class="btn btn-info btn-block btn-md"
-                  :disabled="loading"
-                  tabindex="4"
-                >
-                  <i class="fal fa-sign-in mr-1"></i>
-                  {{ loading ? 'Proses...' : 'Masuk' }}
-                </button>
-              </div>
-            </div>
-            <div class="row no-gutters" v-if="settings.etpp_existing">
-              <div class="col-lg-12 pr-lg-1 my-1">
-                <a
-                  :href="settings.url_etpp_existing"
-                  target="_blank"
-                  id="js-login-exist-btn"
-                  type="button"
-                  class="btn btn-success btn-block btn-md text-white"
-                  tabindex="8"
-                >
-                  <i class="fal fa-globe mr-1"></i>
-                  ETPP 2021
-                </a>
-              </div>
-            </div>
-            <div class="text-right text-primary mt-2 reset-password">
-              <span @click="forgotPassword()" tabindex="7">
-                Lupa passsword?
-              </span>
-            </div>
-          </div>
-        </b-form>
-      </validation-observer>
-    </section>
-    <section v-else>
-      <reset-password :nrk="model.username" @backToLogin="showFormLogin()"></reset-password>
-    </section>
-  </section>
+	<section>
+		<section id="formlogin" v-if="!showResetPassword">
+			<validation-observer v-slot="{ passes }" :slim="true">
+				<b-form @submit.prevent="passes(submit)" id="form-login">
+					<b-form-group
+						description="Gunakan NRK atau Username Anda yang sudah terdaftar"
+						label="Username"
+						label-for="username">
+						<validation-provider
+							rules="required"
+							v-slot="{ errors }"
+							name="Username">
+							<b-input-group
+								prepend="@"
+								name="username"
+								class="mb-2 mr-sm-2 mb-sm-0">
+								<template slot="prepend">
+									<span class="input-group-text">
+										<i class="fal fa-user-alt fs-xl"></i>
+									</span>
+								</template>
+								<b-form-input
+									v-model="model.username"
+									trim
+									id="username"
+									v-focus
+									:disabled="loading"
+									placeholder="Username"
+									tabindex="1">
+								</b-form-input>
+							</b-input-group>
+							<invalid-feedback :error="errors[0] || messages.username" class="mt-1"></invalid-feedback>
+						</validation-provider>
+					</b-form-group>
+					<b-form-group
+						description="Untuk keamanan silahkan ganti kata sandi Anda secara berkala"
+						label="Password"
+						label-for="password">
+						<ValidationProvider
+							rules="required"
+							v-slot="{ errors }"
+							name="Password">
+							<b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
+								<template slot="prepend">
+									<span class="input-group-text">
+										<i class="fal fa-lock-alt fs-xl"></i>
+									</span>
+								</template>
+								<b-form-input
+									v-model="model.password"
+									id="password"
+									type="password"
+									:disabled="loading"
+									name="password"
+									placeholder="Password"
+									tabindex="2">
+								</b-form-input>
+							</b-input-group>
+							<invalid-feedback :error="errors[0] || (messages.username.length == 0 ? messages.password : '')" class="mt-1"></invalid-feedback>
+						</ValidationProvider>
+					</b-form-group>
+					<div class="form-group mt-0 mb-2">
+						<div class="captcha row no-gutters">
+							<div class="col-lg-5 pr-lg-1 my-2">
+								<div style="display: inline-block; border-radius: 0.3rem; overflow: hidden; width: 130px; height: 45px;">
+								<b-img
+									id="captcha-img"
+									:blank="!hasCaptcha"
+									blank-color="#f2f2f2"
+									width="130px"
+									alt="Loading..."
+									:src="captcha_img"
+									ref="captcha-img"/>
+								</div>
+							</div>
+							<div class="col-lg-7 pr-lg-1 my-2">
+								<div class="row no-gutters">
+									<div class="col-lg-6">
+										<div class="reload-btn pl-2">
+											<button type="button" class="btn btn-danger btn-sm reload" id="reload-captcha" :disabled="loading" @click="getCaptcha()" tabindex="5">
+												Reload Captcha
+											</button>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="reload-btn pl-2">
+											<button
+												type="button"
+												class="btn btn-primary btn-sm reload"
+												id="audio-captcha"
+												:disabled="loading"
+												@click.prevent="readAudio"
+												aria-describedby="Captcha Suara"
+												tabindex="6">
+												Captcha Suara
+											</button>
+										</div>
+									</div>
+									<div class="col-lg-6" v-if="false">
+										<div class="klik-btn pl-1">
+											<button
+												type="button"
+												class="btn btn-outline-light btn-sm read"
+												id="read-captcha"
+												@click="readCaptcha()">
+												{{
+													captcha_read
+													? `Captchanya adalah ${captcha_read}`
+													: "Klik Captcha"
+												}}
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="captcha-input mt-1">
+							<ValidationProvider
+								:rules="captchaRules"
+								v-slot="{ errors }"
+								name="Captcha">
+								<input
+								id="captcha"
+								name="captcha"
+								type="text"
+								class="form-control"
+								autocomplete="off"
+								v-mask="'#####'"
+								v-model="model.captcha"
+								placeholder="Captcha"
+								aria-label="Captcha"
+								:disabled="loading"
+								tabindex="3" />
+								<invalid-feedback
+									:error="errors[0] || messages.captcha"
+									class="mt-1">
+								</invalid-feedback>
+							</ValidationProvider>
+						</div>
+					</div>
+					<div class="action-button mt-3">
+						<div class="row no-gutters">
+							<div class="col-lg-12 pr-lg-1 my-1">
+								<button
+									id="js-login-btn"
+									type="submit"
+									class="btn btn-info btn-block btn-md"
+									:disabled="loading"
+									tabindex="4">
+									<i class="fal fa-sign-in mr-1"></i>
+									{{ loading ? 'Proses...' : 'Masuk' }}
+								</button>
+							</div>
+						</div>
+						<div class="row no-gutters" v-if="settings.etpp_existing">
+						<div class="col-lg-12 pr-lg-1 my-1">
+							<a
+							:href="settings.url_etpp_existing"
+							target="_blank"
+							id="js-login-exist-btn"
+							type="button"
+							class="btn btn-success btn-block btn-md text-white"
+							tabindex="8"
+							>
+							<i class="fal fa-globe mr-1"></i>
+							ETPP 2021
+							</a>
+						</div>
+						</div>
+						<div class="text-right text-primary mt-2 reset-password">
+						<span @click="forgotPassword()" tabindex="7">
+							Lupa passsword?
+						</span>
+						</div>
+					</div>
+				</b-form>
+			</validation-observer>
+		</section>
+		<section v-else>
+			<reset-password :nrk="model.username" @backToLogin="showFormLogin()"></reset-password>
+		</section>
+	</section>
 </template>
 
 <script>

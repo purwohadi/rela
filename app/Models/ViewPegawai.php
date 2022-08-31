@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Traits\HasCompositePrimaryKey;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Illuminate\Database\Eloquent\Model;
 
 class ViewPegawai extends Base
 {
-  use HasCompositePrimaryKey, HasQueryFilter;
+  use HasCompositePrimaryKey;
+  // use HasQueryFilter;
 
   /**
    * Indicates if the IDs are auto-incrementing.

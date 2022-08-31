@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Traits\{HasHashSlug, HasUserAttribute, HasUserMediaAttribute};
 use Lab404\Impersonate\Models\Impersonate;
@@ -16,7 +16,7 @@ class User extends Authenticatable implements HasMedia
   use Notifiable
     , HasHashSlug
     , HasMediaTrait
-    , HasQueryFilter
+    // , HasQueryFilter
     , HasUserAttribute
     , HasUserMediaAttribute
     , Impersonate

@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\HasHashSlug;
 
 class Group extends Model
 {
-  use HasQueryFilter, HasHashSlug;
+  // use HasQueryFilter;
+  use HasHashSlug;
   protected $primaryKey = "i_id";
   const CREATED_AT = 'dt_created_at';
   const UPDATED_AT = 'dt_updated_at';
