@@ -1,1 +1,115 @@
-!function(){"use strict";window.addEventListener("load",()=>{a(),$.ajax({url:APP_URL+"/pengumuman",type:"GET",cache:!1,headers:{"X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")},data:{current_page:15,current_page_banner:1,sort_by:["dt_updated_at","i_id"],sort_desc:"desc"},success:function(e){$("#pengumuman_box").html(""),$("#pengumuman_banner_box").html(""),$("#pengumuman_box").html(e[0]),$("#pengumuman_banner_box").html(e[1]),$("#pengumuman_banner").modal("show")}});const e=document.getElementById("seek-btn");e.addEventListener("click",()=>{Promise.resolve(e.getAttribute("data-state")).then(e=>"off"===e?{type:"text",state:"on",icon:"fa-eye-slash"}:{type:"password",state:"off",icon:"fa-eye"}).then(t=>{document.getElementById("password").setAttribute("type",t.type),e.setAttribute("data-state",t.state),e.innerHTML=`<i class="fal ${t.icon} fs-xl"></i>`})}),$("#panel-container-information").slimScroll({position:"right",height:"440px",railVisible:!1,alwaysVisible:!1});const t=document.getElementsByClassName("needs-validation");function a(){let e=Math.random();var t=new XMLHttpRequest,a="reload-captcha/?="+e;t.onloadstart=function(){document.getElementById("captcha-img").innerHTML="Loading..."},t.onerror=function(){alert("Gagal reload captcha")},t.onloadend=function(){""!==this.responseText&&(document.getElementById("captcha-img").src=a,document.getElementById("read-captcha").innerHTML="Klik Captcha")},t.open("GET",a,!0),t.send()}Array.prototype.filter.call(t,e=>{e.addEventListener("submit",t=>{!1===e.checkValidity()&&(t.preventDefault(),t.stopPropagation()),e.classList.add("was-validated")},!1)}),document.getElementById("reload-captcha").onclick=function(){a()},document.getElementById("read-captcha").onclick=function(){var e=new XMLHttpRequest;e.onerror=function(){alert("Gagal reload captcha")},e.onloadend=function(){if(""!==this.responseText){var e=JSON.parse(this.responseText);document.getElementById("read-captcha").innerHTML="Captchanya adalah "+e.captcha}},e.open("GET","read-captcha",!0),e.send()}},!1)}();
+(function () {
+  'use strict'
+
+  window.addEventListener('load', () => {
+    reloadCaptcha()
+    getPengumuman()
+    const seekBtn = document.getElementById("seek-btn")
+    seekBtn.addEventListener('click', () => {
+      Promise.resolve(seekBtn.getAttribute('data-state'))
+        .then(state => {
+          return (state === 'off')
+            ? { type: 'text', state: 'on', icon: 'fa-eye-slash' }
+            : { type: 'password', state: 'off', icon: 'fa-eye' }
+        })
+        .then(result => {
+          let target = document.getElementById('password')
+          target.setAttribute('type', result.type)
+          seekBtn.setAttribute('data-state', result.state)
+          seekBtn.innerHTML = `<i class="fal ${ result.icon } fs-xl"></i>`
+        })
+    })
+
+    $('#panel-container-information').slimScroll({
+      position: 'right',
+      height: '440px',
+      railVisible: false,
+      alwaysVisible: false
+    });
+
+    const forms = document.getElementsByClassName('needs-validation')
+    Array.prototype.filter.call(forms, (form) => {
+      form.addEventListener('submit', (event) => {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+
+    document.getElementById("reload-captcha").onclick = function () {
+      reloadCaptcha()
+    }
+
+    function reloadCaptcha() {
+      let rand = Math.random()
+      var xhr = new XMLHttpRequest();
+      var url = "reload-captcha/?=" + rand;
+
+      xhr.onloadstart = function () {
+        document.getElementById("captcha-img").innerHTML = "Loading...";
+      }
+
+      xhr.onerror = function () {
+        alert("Gagal reload captcha");
+      };
+
+      xhr.onloadend = function () {
+        if (this.responseText !== "") {
+          document.getElementById("captcha-img").src = url;
+          document.getElementById("read-captcha").innerHTML = 'Klik Captcha';
+        }
+      };
+
+      xhr.open("GET", url, true);
+      xhr.send();
+    }
+
+    function getPengumuman() {
+      let page = 15
+      let page_banner = 1
+      $.ajax({
+          url: APP_URL + "/pengumuman",
+          type: 'GET',
+          cache: false,
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          data:{
+              current_page: page,
+              current_page_banner: page_banner,
+              sort_by: ['dt_updated_at', 'i_id'],
+              sort_desc: 'desc'
+          },
+          success: function(response){
+            $('#pengumuman_box').html('');
+            $('#pengumuman_banner_box').html('');
+            $('#pengumuman_box').html(response[0]);
+            $('#pengumuman_banner_box').html(response[1]);
+
+            $('#pengumuman_banner').modal('show');
+          }
+      });
+    }
+
+    document.getElementById("read-captcha").onclick = function () {
+      var xhr = new XMLHttpRequest();
+      var url = "read-captcha";
+
+      xhr.onerror = function () {
+        alert("Gagal reload captcha");
+      };
+
+      xhr.onloadend = function () {
+        if (this.responseText !== "") {
+          var result = JSON.parse(this.responseText);
+          document.getElementById("read-captcha").innerHTML = 'Captchanya adalah ' + result.captcha;
+        }
+      };
+
+      xhr.open("GET", url, true);
+      xhr.send();
+    }
+  }, false)
+})()
