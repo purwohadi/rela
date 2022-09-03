@@ -5,11 +5,12 @@ namespace App\Models;
 use App\Models\Traits\HasHashSlug;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Builder;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 
 class ReferensiUmum extends Base
 {
-  use HasQueryFilter, HasHashSlug;
+  // use HasQueryFilter;
+  use HasHashSlug;
 
   /**
    * The primary key for the model.

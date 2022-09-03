@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Models\Traits\HasHashSlug;
 use Illuminate\Database\Eloquent\Model;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 
 class AuditTrails extends Model
 {
-  use HasQueryFilter, HasHashSlug;
+  // use HasQueryFilter;
+  use HasHashSlug;
   protected $primaryKey = "i_id";
   const CREATED_AT = 'dt_waktu_aksi';
   const UPDATED_AT = NULL;

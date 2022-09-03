@@ -4,12 +4,13 @@ namespace App\Models;
 
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Spatie\Permission\Models\Permission as BasePermisson;
 
 class Permission extends BasePermisson
 {
-  use Uuids, SoftDeletes, HasQueryFilter;
+  use Uuids, SoftDeletes;
+  // use HasQueryFilter;
 
   /**
    * Indicates if the IDs are auto-incrementing.

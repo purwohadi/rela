@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web', 'auth'])->get('/', 'HomeController@index')->name('home');
 

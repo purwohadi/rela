@@ -4,12 +4,14 @@ namespace App\Models;
 
 use App\Models\Traits\{HasHashSlug, HasUserAttribute, HasUserMediaAttribute};
 use App\Traits\HasCompositePrimaryKey;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Skpd extends Base
 {
-  use HasCompositePrimaryKey, HasQueryFilter, HasHashSlug;
+  use HasCompositePrimaryKey;
+  // use HasQueryFilter;  
+  use HasHashSlug;
 
   /**
    * Indicates if the IDs are auto-incrementing.

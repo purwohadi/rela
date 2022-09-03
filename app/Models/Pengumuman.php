@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Traits\{HasHashSlug, HasUserAttribute, HasUserMediaAttribute};
 use App\Traits\HasCompositePrimaryKey;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\HtmlString;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -13,7 +13,9 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Pengumuman extends Base implements HasMedia
 {
-  use HasCompositePrimaryKey, HasQueryFilter, HasHashSlug, HasMediaTrait;
+  use HasCompositePrimaryKey;
+  // use HasQueryFilter;
+  use HasHashSlug, HasMediaTrait;
 
   /**
    * The primary key for the model.

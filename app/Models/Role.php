@@ -5,11 +5,12 @@ namespace App\Models;
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Permission\Models\Role as BaseRole;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 
 class Role extends BaseRole
 {
-  use Uuids, SoftDeletes, HasQueryFilter;
+  use Uuids, SoftDeletes;
+  // use HasQueryFilter;
 
   /**
    * Indicates if the IDs are auto-incrementing.

@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'permission', 'as' => 'permission.'], function () {
   Route::get('/', 'PermissionController@search')->name('get');

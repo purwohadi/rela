@@ -5,11 +5,12 @@ namespace App\Models;
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
+// use Diskominfotik\QueryFilter\Traits\HasQueryFilter;
 
 class Menu extends Model
 {
-  use Uuids, SoftDeletes, HasQueryFilter;
+  use Uuids, SoftDeletes;
+  // use HasQueryFilter;
 
   /**
    * Indicates if the IDs are auto-incrementing.

@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'role', 'as' => 'role.'], function () {
   Route::get('/', 'RoleController@search')->name('get');

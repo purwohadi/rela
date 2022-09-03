@@ -13,9 +13,9 @@ return [
         'limit'     => 'limit',
     ],
 
-    'filter_class' => [
-        'search'    => Diskominfotik\QueryFilter\Query\Search::class,
-        'sort_by'   => Diskominfotik\QueryFilter\Query\SortBy::class,
-        'where'     => Diskominfotik\QueryFilter\Query\Where::class
-    ],
+    // 'filter_class' => [
+    //     'search'    => Diskominfotik\QueryFilter\Query\Search::class,
+    //     'sort_by'   => Diskominfotik\QueryFilter\Query\SortBy::class,
+    //     'where'     => Diskominfotik\QueryFilter\Query\Where::class
+    // ],
 ];

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------

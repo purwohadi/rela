@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\Contracts\RoleRepositoryInterface;
-use Diskominfotik\Downloadable\Facades\Downloadable;
+// use Diskominfotik\Downloadable\Facades\Downloadable;
 
 class RoleController extends Controller
 {
@@ -28,27 +28,27 @@ class RoleController extends Controller
    */
   public function search(Request $request)
   {
-    if ($request->has('export') && $request->export == 'true') {
-      $roles = $this->role->search($request);
-      // foreach ($roles as $role) {
-      //   dd(array_column($role->permissions->toArray(), 'name'));
-      //   // dd($role->permissions->toArray());
-      // }
-      $customHeader = function ($data) {
-        // $permissions = array_column($data['permissions'], 'name');
-        $name = $data->name;
-        return [
-          'Nama Peran' => $name,
-          'Nama Penjagaan' => $data->guard_name,
-          // 'Daftar Hak Akses' => implode(', ', $permissions)
-        ];
-      };
+    // if ($request->has('export') && $request->export == 'true') {
+    //   $roles = $this->role->search($request);
+    //   // foreach ($roles as $role) {
+    //   //   dd(array_column($role->permissions->toArray(), 'name'));
+    //   //   // dd($role->permissions->toArray());
+    //   // }
+    //   $customHeader = function ($data) {
+    //     // $permissions = array_column($data['permissions'], 'name');
+    //     $name = $data->name;
+    //     return [
+    //       'Nama Peran' => $name,
+    //       'Nama Penjagaan' => $data->guard_name,
+    //       // 'Daftar Hak Akses' => implode(', ', $permissions)
+    //     ];
+    //   };
 
-      return Downloadable::as($request->type)
-      ->withData($roles->toArray())
-        ->withFilename('Daftar Peran')
-        ->get($customHeader);
-    }
+    //   return Downloadable::as($request->type)
+    //   ->withData($roles->toArray())
+    //     ->withFilename('Daftar Peran')
+    //     ->get($customHeader);
+    // }
     return $this->role->search($request);
   }
 

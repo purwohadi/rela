@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'menu', 'as' => 'menu.'], function () {
   Route::get('/', 'MenuController@search')->name('get');

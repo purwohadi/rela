@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'feature-access', 'as' => 'feature-access.'], function () {
   Route::get('/', 'FeatureAccessController@search')->name('get');
