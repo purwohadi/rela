@@ -22,58 +22,9 @@ return [
     'pengumuman' => 'tm_pengumuman',
     'cronjob' => 'tm_cronjob',
     'buku_manual' => 'tm_buku_manual',
-
-    //-------SPBE---------------------------
-    'domain_layanan' => 'domain_layanan',
-    'domain_proses' => 'domain_proses',
-    'domain_infra_jip' => 'domain_infra_jip',
-    'domain_infra_software' => 'domain_infra_software',
-    'domain_infra_server' => 'domain_infra_server',
-    'domain_infra_cloud' => 'domain_infra_cloud',
-    'domain_infra_splp' => 'domain_infra_splp',
-    'domain_aplikasi' => 'domain_aplikasi',
-    'domain_infra_pheri' => 'domain_infra_pheri',
-    'domain_infra_fasilitas' => 'domain_infra_fasilitas',
-    'domain_infra_cloud' => 'domain_infra_cloud',
-    'domain_infra_storage' => 'domain_infra_storage',
-    'domain_infra_splp' => 'domain_infra_splp',
-    'domain_infra_netdev' => 'domain_infra_netdev',
-    'domain_standar_keamanan' => 'domain_standar_keamanan',
-    'domain_peningkatan_keamanan' => 'domain_peningkatan_keamanan',
-    'domain_edukasi_keamanan' => 'domain_edukasi_keamanan',
-    'domain_audit_keamanan' => 'domain_audit_keamanan',
-    'roadmap' => 'roadmap_harmonisasi',
-    'domain_infra_keamanan' => 'domain_infra_keamanan',
-    'vw_domain_proses' => 'vw_domain_proses',
-    'roadmap' => 'roadmap_harmonisasi',
-
-    'tm_informasi' => 'tm_informasi',
-    'tm_informasi_detail' => 'tm_informasi_detail',
-    'tm_proses_info' => 'tm_proses_info',
-    'tm_proses' => 'tm_proses',
-    'tm_proses_tupoksi' => 'tm_proses_tupoksi',
-    'layanan' => 'tm_layanan',
-    'layanan_proses' => 'tm_layanan_proses',
-    'layanan_detail' => 'tm_layanan_detail',
-    'tm_roadmap' => 'tm_roadmap',
-    'tm_program_roadmap' => 'tm_program_roadmap',
-    'tm_infra_splp' => 'tm_infra_splp',
-    'tm_infra_keamanan' => 'tm_infra_keamanan',
-    'tm_metadata_terkait' => 'tm_metadata_terkait',
-    'tm_infra_storage' => 'tm_infra_storage',
-    'infra_jip' => 'tm_infra_jip',
-    'metadata_terkait' => 'tm_metadata_terkait',
-    'tm_aplikasi' => 'tm_aplikasi',
-    'infra_fasilitas' => 'tm_infra_fasilitas',
-    'tm_infra_cloud' => 'tm_infra_cloud',
-    'infra_pheri'  => 'tm_infra_pheri',
-    'aplikasi_detail' => 'tm_aplikasi_detail',
-    'aplikasi_data' => 'tm_aplikasi_data',
-    'aplikasi_layanan' => 'tm_aplikasi_layanan',
-    'tm_infra_netdev' => 'tm_infra_netdev',
-    'aplikasi_basis' => 'tm_aplikasi_basis',
-    'aplikasi_luaran' => 'tm_aplikasi_luaran',
-    'tm_informasi_interoperabilitas' => 'tm_informasi_interoperabilitas'
+    
+    //-------Relawan---------------------------
+    'dpt2019' => 'rekapulasi_dpt_2019',
   ],
 
   /**
@@ -141,15 +92,6 @@ return [
     'klogad' => 'vw_pers_klogad3',
     'scorecard' => 'vw_scorecard',
     'pegawai_ekp' => 'vw_pegawai_ekp',
-
-    /**SPBE */
-    'vw_domain_layanan' => 'vw_domain_layanan',
-    'vw_infra_jip' => 'vw_infra_jip',
-    'vw_infra_pheri' => 'vw_infra_pheri',
-    'vw_aplikasi' => 'vw_domain_aplikasi',
-    'vw_infra_fasilitas' => 'vw_infra_fasilitas',
-    'vw_domain_aplikasi_layanan' => 'vw_domain_aplikasi_layanan',
-    'vw_jabatan_tropd' => 'vw_jabatan_tropd'
   ],
 
   /**
